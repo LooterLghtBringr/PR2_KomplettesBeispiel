@@ -12,10 +12,11 @@ public class UrlLoader {
             URL urlToWebPage = new URL(url);
             BufferedReader br = new BufferedReader(new InputStreamReader(urlToWebPage.openStream()));
             String content = "";
-            while ((content += br.readLine()) != null) {
-
+            String concatContent = "";
+            while ((content = br.readLine()) != null) {
+                concatContent += content + "\n";
             }
-            webPage = new WebPage(url, content);
+            webPage = new WebPage(url, concatContent);
 
         } catch (Exception e) {
             new UrlLoaderException("UrlLoaderException occured", e);

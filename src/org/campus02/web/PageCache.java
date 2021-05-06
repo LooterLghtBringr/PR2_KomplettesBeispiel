@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class PageCache {
 
-    private HashMap<String, WebPage> cache;
+    private HashMap<String, WebPage> cache = new HashMap<>();
 
     public HashMap<String, WebPage> getCache() {
         return cache;
